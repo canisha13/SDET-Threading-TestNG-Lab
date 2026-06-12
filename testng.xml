@@ -1,15 +1,12 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 
-<suite name="Parallel TestNG Suite"
-       parallel="methods"
-       thread-count="4">
+<suite name="Parallel DataProvider Suite"
+       data-provider-thread-count="4">
 
-    <test name="Thread Info Tests">
+    <test name="Bank Account DataProvider Tests">
 
         <classes>
-
-            <class name="tests.ThreadInfoTest"/>
-
+            <class name="tests.BankAccountDataProviderTest"/>
         </classes>
 
     </test>
