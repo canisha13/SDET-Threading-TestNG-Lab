@@ -6,7 +6,7 @@
     <test name="Bank Account DataProvider Tests">
 
         <classes>
-            <class name="tests.BankAccountDataProviderTest"/>
+           <class name="tests.BankAccountThreadLocalTest"/>
         </classes>
 
     </test>

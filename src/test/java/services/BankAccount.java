@@ -16,6 +16,11 @@ public class BankAccount {
         balance = balance - amount;
     }
 
+    public void transferTo(BankAccount targetAccount, int amount) {
+        this.withdraw(amount);
+        targetAccount.deposit(amount);
+    }
+
     public int getBalance() {
         return balance;
     }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="TestSuite" time="0.735" tests="4" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="TestSuite" time="0.703" tests="8" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="26"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -15,7 +15,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="GB"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-26.0.1\bin"/>
-    <property name="sun.java.command" value="C:\Users\450 G10\AppData\Local\Temp\surefire13826724467164628383\surefirebooter-20260612103707058_3.jar C:\Users\450 G10\AppData\Local\Temp\surefire13826724467164628383 2026-06-12T10-37-06_815-jvmRun1 surefire-20260612103707058_1tmp surefire_0-20260612103707058_2tmp"/>
+    <property name="sun.java.command" value="C:\Users\450 G10\AppData\Local\Temp\surefire3763770644013364510\surefirebooter-20260612145049509_3.jar C:\Users\450 G10\AppData\Local\Temp\surefire3763770644013364510 2026-06-12T14-50-49_246-jvmRun1 surefire-20260612145049509_1tmp surefire_0-20260612145049509_2tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="C:\Users\450 G10\eclipse-workspace\java-threading-testng-lab\target\test-classes;C:\Users\450 G10\eclipse-workspace\java-threading-testng-lab\target\classes;C:\Users\450 G10\.m2\repository\org\testng\testng\7.10.2\testng-7.10.2.jar;C:\Users\450 G10\.m2\repository\org\slf4j\slf4j-api\1.7.36\slf4j-api-1.7.36.jar;C:\Users\450 G10\.m2\repository\com\beust\jcommander\1.82\jcommander-1.82.jar;C:\Users\450 G10\.m2\repository\org\webjars\jquery\3.7.1\jquery-3.7.1.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -30,7 +30,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\450 G10\AppData\Local\Temp\surefire13826724467164628383\surefirebooter-20260612103707058_3.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\450 G10\AppData\Local\Temp\surefire3763770644013364510\surefirebooter-20260612145049509_3.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="26.0.1+8-34"/>
@@ -59,18 +59,37 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="70.0"/>
   </properties>
-  <testcase name="depositShouldIncreaseBalance[100, 50, 150](2)" classname="tests.BankAccountDataProviderTest" time="0.024">
-    <system-out><![CDATA[Opening Balance: 100 Deposit: 50 Thread: 35
-Opening Balance: 200 Deposit: 100 Thread: 36
-Opening Balance: 1000 Deposit: 500 Thread: 38
-Opening Balance: 500 Deposit: 250 Thread: 37
+  <testcase name="balanceTest" classname="tests.BankAccountThreadLocalTest" time="0.005">
+    <system-out><![CDATA[Balance Test Balance: 100 Thread ID: 3 Thread Name: main
 ]]></system-out>
     <system-err><![CDATA[SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
 SLF4J: Defaulting to no-operation (NOP) logger implementation
 SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
 ]]></system-err>
   </testcase>
-  <testcase name="depositShouldIncreaseBalance[1000, 500, 1500](4)" classname="tests.BankAccountDataProviderTest" time="0.03"/>
-  <testcase name="depositShouldIncreaseBalance[200, 100, 300](4)" classname="tests.BankAccountDataProviderTest" time="0.03"/>
-  <testcase name="depositShouldIncreaseBalance[500, 250, 750](4)" classname="tests.BankAccountDataProviderTest" time="0.03"/>
+  <testcase name="depositMultipleTimesTest" classname="tests.BankAccountThreadLocalTest" time="0.026">
+    <system-out><![CDATA[Starting Balance: 100
+Balance after 1st deposit: 150
+Balance after 2nd deposit: 175
+Deposit Test Balance: 185
+]]></system-out>
+  </testcase>
+  <testcase name="depositTest" classname="tests.BankAccountThreadLocalTest" time="0.002">
+    <system-out><![CDATA[Deposit Test Balance: 150 Thread ID: 3 Thread Name: main
+]]></system-out>
+  </testcase>
+  <testcase name="depositZeroAmountTest" classname="tests.BankAccountThreadLocalTest" time="0.0"/>
+  <testcase name="withdrawFullBalanceTest" classname="tests.BankAccountThreadLocalTest" time="0.0"/>
+  <testcase name="withdrawMultipleTimesTest" classname="tests.BankAccountThreadLocalTest" time="0.007">
+    <system-out><![CDATA[Starting Balance: 100
+Balance after 1st withdraw: 80
+Balance after 2nd withdraw: 50
+Withdraw Test Balance: 40
+]]></system-out>
+  </testcase>
+  <testcase name="withdrawTest" classname="tests.BankAccountThreadLocalTest" time="0.002">
+    <system-out><![CDATA[Withdraw Test Balance: 70 Thread ID: 3 Thread Name: main
+]]></system-out>
+  </testcase>
+  <testcase name="withdrawZeroAmountTest" classname="tests.BankAccountThreadLocalTest" time="0.0"/>
 </testsuite>
